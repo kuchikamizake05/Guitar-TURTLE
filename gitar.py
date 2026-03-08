@@ -53,3 +53,29 @@ def draw_line(t, x1, y1, x2, y2, color="black", pen_size=1):
     t.pendown()
     t.goto(x2, y2)
     t.pensize(2)  # balikin ukuran pena ke defaultnya (2)
+
+# === Program Utama ===
+
+def main():
+    screen = turtle.Screen()
+    screen.title("Tugas Geometri Dasar - Gitar Akustik")
+    screen.bgcolor("#E8F0F2")
+    screen.tracer(1)
+    t = turtle.Turtle()
+    t.speed("fast")
+    
+    t.hideturtle()
+    t.pensize(2)
+
+    CX = 0
+    BODY_Y = -50
+
+    # 1. ELIPS - Pembuatan Badan Bawah Gitar (Lower Bout)
+    draw_ellipse(t, CX, BODY_Y - 90, 100, 100, "#C88A4A", "#5A3010")
+
+    # 2. LINGKARAN - Pembuatan Badan Atas Gitar (Upper Bout)
+    draw_circle(t, CX, BODY_Y + 40, 75, "#C88A4A", "#5A3010")
+
+    # Menutupi garis potongan di tengah gabungan bangun ruang
+    draw_ellipse(t, CX, BODY_Y - 90, 98, 98, "#C88A4A", "#C88A4A")
+    draw_circle(t, CX, BODY_Y + 40, 73, "#C88A4A", "#C88A4A")
