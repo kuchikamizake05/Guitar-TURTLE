@@ -79,3 +79,19 @@ def main():
     # Menutupi garis potongan di tengah gabungan bangun ruang
     draw_ellipse(t, CX, BODY_Y - 90, 98, 98, "#C88A4A", "#C88A4A")
     draw_circle(t, CX, BODY_Y + 40, 73, "#C88A4A", "#C88A4A")
+    # LINGKARAN - Pembuatan Lubang Suara (Sound Hole)
+    hole_y = BODY_Y + 20
+    draw_circle(t, CX, hole_y, 32, "#E0B050", "#8A5A20")
+    draw_circle(t, CX, hole_y, 27, "#C88A4A", "#8A5A20")
+    draw_circle(t, CX, hole_y, 22, "#201005", "black")
+
+    # 3. TRAPESIUM - Pembuatan Pinggiran Bridge (Penahan Senar)
+    bridge_y = BODY_Y - 110
+    bridge_points = [
+        (CX - 40, bridge_y - 10),
+        (CX + 40, bridge_y - 10),
+        (CX + 30, bridge_y + 10),
+        (CX - 30, bridge_y + 10)
+    ]
+    draw_polygon(t, bridge_points, "#402010", "black")
+    draw_line(t, CX - 25, bridge_y + 5, CX + 25, bridge_y + 5, "white", 3)
