@@ -95,3 +95,19 @@ def main():
     ]
     draw_polygon(t, bridge_points, "#402010", "black")
     draw_line(t, CX - 25, bridge_y + 5, CX + 25, bridge_y + 5, "white", 3)
+    # 4. POLIGON (PERSEGI PANJANG) - Pembuatan Leher Gitar (Neck)
+    neck_bottom = hole_y + 27
+    neck_top = neck_bottom + 240
+    neck_w = 16
+
+    neck_pts = [
+        (CX - neck_w, neck_bottom),
+        (CX - neck_w, neck_top),
+        (CX + neck_w, neck_top),
+        (CX + neck_w, neck_bottom)
+    ]
+    draw_polygon(t, neck_pts, "#6A3A1A", "black")
+    
+    for i in range(1, 15): 
+        y_fret = neck_bottom + (i * 16)
+        draw_line(t, CX - neck_w, y_fret, CX + neck_w, y_fret, "silver", 2)
