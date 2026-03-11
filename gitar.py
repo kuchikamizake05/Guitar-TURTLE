@@ -111,3 +111,25 @@ def main():
     for i in range(1, 15): 
         y_fret = neck_bottom + (i * 16)
         draw_line(t, CX - neck_w, y_fret, CX + neck_w, y_fret, "silver", 2)
+    # 5. JAJARAN GENJANG - Kepala Gitar (Headstock)
+    head_bottom = neck_top
+    head_top = neck_top + 60
+    head_w = 25
+    slant = 10
+
+    head_pts = [
+        (CX - head_w, head_bottom),
+        (CX - head_w + slant, head_top),
+        (CX + head_w + slant, head_top),
+        (CX + head_w, head_bottom)
+    ]
+    draw_polygon(t, head_pts, "#804020", "black")
+
+    # 6. Tuning Pegs
+    peg_y_list = [head_bottom + 15, head_bottom + 35, head_bottom + 55]
+    for py in peg_y_list:
+        s_offset = slant * ((py - head_bottom) / 60)
+        draw_circle(t, CX - head_w - 10 + s_offset, py, 6, "silver", "black")
+        draw_line(t, CX - head_w - 4 + s_offset, py, CX - head_w + 3 + s_offset, py, "gray", 3)
+        draw_circle(t, CX + head_w + 10 + s_offset, py, 6, "silver", "black")
+        draw_line(t, CX + head_w + 4 + s_offset, py, CX + head_w - 3 + s_offset, py, "gray", 3)
