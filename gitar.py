@@ -133,3 +133,23 @@ def main():
         draw_line(t, CX - head_w - 4 + s_offset, py, CX - head_w + 3 + s_offset, py, "gray", 3)
         draw_circle(t, CX + head_w + 10 + s_offset, py, 6, "silver", "black")
         draw_line(t, CX + head_w + 4 + s_offset, py, CX + head_w - 3 + s_offset, py, "gray", 3)
+    # 7. Penarikan Garis Lurus - Representasi Senar
+    for i in range(6):
+        x_offset = -12 + (i * 4.8)
+        x_bawah = CX + x_offset * 1.5 
+        y_bawah = bridge_y + 5
+        x_atas = CX + x_offset
+        y_atas = neck_top
+        draw_line(t, x_bawah, y_bawah, x_atas, y_atas, "#E0E0E0", 1)
+
+    def save_and_close(x, y):
+        cv = turtle.getcanvas()
+        cv.postscript(file="gitar.eps")
+        screen.bye()
+
+    screen.update()
+    screen.onscreenclick(save_and_close)
+    turtle.done()
+
+if __name__ == "__main__":
+    main()
