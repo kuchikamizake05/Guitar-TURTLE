@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Distribution / Build
+dist/
+build/
+*.spec
+
+# Graphics output
+*.eps
+*.png
+*.jpg
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
